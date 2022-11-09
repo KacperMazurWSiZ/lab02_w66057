@@ -1,27 +1,47 @@
 import java.util.Random;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // ZADANIE 1
-//        int[] randomNumbersArray = new int[10];
-//        getRandomNumber(randomNumbersArray);
-//        displaySumAndAvgFromRandomNumbersArray(randomNumbersArray);
 
-        // ZADANIE 2
+        System.out.println("Select a task (0-7)");
+        int temp = getInt();
 
-//        displayValueFromArrays();
+        switch (temp) {
 
-        // ZADANIE 3
-//        changeToUppercase();
+            case 1:
+                int[] randomNumbersArray = new int[10];
+                getRandomNumber(randomNumbersArray);
+                displaySumAndAvgFromRandomNumbersArray(randomNumbersArray);
+                break;
 
-        //ZADANIE 4
-        //ZADANIE 5
-        //ZADANIE 6
-        //ZADANIE 7
+            case 2:
+                displayValueFromArrays();
+                break;
 
+            case 3:
+                changeToUppercase();
+                break;
 
+//            case 4:
+//
+//                break;
+//
+//            case 5:
+//
+//                break;
+//
+//            case 6:
+//
+//                break;
+//
+//            case 7:
+//
+//                break;
 
+        }
 
     }
+    public static int getInt(){return new Scanner(System.in).nextInt();}
 
     public static int[] getRandomNumber(int randomNumbersArray[]) {
         Random random = new Random();
@@ -74,4 +94,6 @@ public class Main {
         }
 
     }
+
+
 }
