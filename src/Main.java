@@ -33,7 +33,7 @@ public class Main {
             case 6:
                 int[] userDataArray = new int[5];
                 setValueInArray(userDataArray);
-                displayFactiorialFromUserDataArray(userDataArray);
+                displayFactorialFromUserDataArray(userDataArray);
                 break;
 //
 //            case 7:
@@ -111,9 +111,11 @@ public class Main {
          return valueFromUserDataArray > 1 ? valueFromUserDataArray * getFactorial(valueFromUserDataArray - 1) : 1;
     }
 
-    public static void displayFactiorialFromUserDataArray(int userDataArray[]){
+    public static void displayFactorialFromUserDataArray(int userDataArray[]){
         for(int i = 0; i < 5; i++){
             System.out.println(getFactorial(userDataArray[i]));
         }
     }
+
+
 }
