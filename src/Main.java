@@ -30,9 +30,11 @@ public class Main {
 //
 //                break;
 //
-//            case 6:
-//
-//                break;
+            case 6:
+                int[] userDataArray = new int[5];
+                setValueInArray(userDataArray);
+                displayFactiorialFromUserDataArray(userDataArray);
+                break;
 //
 //            case 7:
 //
@@ -95,5 +97,23 @@ public class Main {
 
     }
 
+    public static int [] setValueInArray(int userDataArray[]){
 
+        for(int i = 0; i < 5; i++){
+            System.out.println("Enter value:");
+            userDataArray[i] = getInt();
+        }
+
+        return userDataArray;
+    }
+
+    public static int getFactorial(int valueFromUserDataArray){
+         return valueFromUserDataArray > 1 ? valueFromUserDataArray * getFactorial(valueFromUserDataArray - 1) : 1;
+    }
+
+    public static void displayFactiorialFromUserDataArray(int userDataArray[]){
+        for(int i = 0; i < 5; i++){
+            System.out.println(getFactorial(userDataArray[i]));
+        }
+    }
 }
