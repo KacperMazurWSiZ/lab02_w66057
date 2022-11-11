@@ -1,7 +1,6 @@
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-
-import static java.util.Collections.swap;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,10 +24,12 @@ public class Main {
                 changeToUppercase();
                 break;
 
-//            case 4:
-//
-//                break;
-//
+            case 4:
+                String[] userDataArrayString = new String[5];
+                setValueInArray(userDataArrayString);
+                displayArray(taskfo(task4(userDataArrayString)));
+                break;
+
             case 5:
                 int[] userDataArrayInt = new int[8];
                 setValueInArray(userDataArrayInt);
@@ -53,15 +54,13 @@ public class Main {
                         System.out.println("Tablice sa rozne");
                     }
                 break;
-
         }
-
     }
 
     public static int getInt() {
         return new Scanner(System.in).nextInt();
     }
-
+    public static String getString() {return new Scanner(System.in).nextLine();}
     public static int[] getRandomNumber(int randomNumbersArray[]) {
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
@@ -69,7 +68,6 @@ public class Main {
         }
         return randomNumbersArray;
     }
-
     public static void displaySumAndAvgFromRandomNumbersArray(int randomNumbersArray[]) {
         double sum = 0;
         double avg = 0;
@@ -83,7 +81,6 @@ public class Main {
         System.out.println("Suma wynosi: " + sum);
         System.out.println("Srednia wynosi: " + avg);
     }
-
     public static void displayValueFromArrays() {
         int[] firstArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int[] secondaryArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -104,7 +101,6 @@ public class Main {
             }
         }
     }
-
     public static void changeToUppercase() {
         String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
 
@@ -113,7 +109,6 @@ public class Main {
         }
 
     }
-
     public static int[] setValueInArray(int userDataArray[]) {
 
         for (int i = 0; i < userDataArray.length; i++) {
@@ -123,17 +118,14 @@ public class Main {
 
         return userDataArray;
     }
-
     public static int getFactorial(int valueFromUserDataArray) {
         return valueFromUserDataArray > 1 ? valueFromUserDataArray * getFactorial(valueFromUserDataArray - 1) : 1;
     }
-
     public static void displayFactorialFromUserDataArray(int userDataArray[]) {
         for (int i = 0; i < 5; i++) {
             System.out.println(getFactorial(userDataArray[i]));
         }
     }
-
     public static boolean isEqual(String firstArray[], String secondArray[]) {
 
         boolean result = false;
@@ -149,7 +141,6 @@ public class Main {
         return counter == firstArray.length ? true : false;
 
     }
-
     public static void bubbleSort(int arrayDataFromUser[]) {
         int n = arrayDataFromUser.length;
         for (int i = 0; i < n - 1; i++)
@@ -160,11 +151,57 @@ public class Main {
                     arrayDataFromUser[j + 1] = temp;
                 }
     }
-
     public static void displayArray(int sortedArray[]){
 
         for (int i : sortedArray) {
             System.out.println(i);
+        }
+    }
+
+    public static String[] setValueInArray(String userDataArray[])  {
+
+        for (int i = 0; i < userDataArray.length; i++) {
+            System.out.println("Enter value:");
+            userDataArray[i] = getString();
+        }
+
+        return userDataArray;
+    }
+
+    public static String[] task4(String userDataArray[]){
+        String[] userDataReverse = new String[5];
+        for(int i = 0; i < userDataArray.length; i++){
+            userDataReverse[i] = userDataArray[userDataArray.length - i - 1];
+        }
+
+        return  userDataReverse;
+    }
+
+    public static String[] taskfo(String userDataArray[]){
+        String[] userDataReverse = new String[5];
+        String newWord = "";
+        char wordChar;
+        for(int i = 0; i < userDataArray.length; i++){
+
+            newWord = "";
+
+            for(int k=0; k< userDataArray[i].length(); k++){
+                wordChar = userDataArray[i].charAt(k);
+                newWord = wordChar + newWord;
+            }
+
+            userDataReverse[i] = newWord;
+
+        }
+
+        return  userDataReverse;
+    }
+
+    public static void displayArray(String userDataArray[]){
+
+        for (String a: userDataArray
+             ) {
+            System.out.println(a);
         }
     }
 
