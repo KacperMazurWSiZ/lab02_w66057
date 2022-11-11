@@ -1,5 +1,8 @@
 import java.util.Random;
 import java.util.Scanner;
+
+import static java.util.Collections.swap;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -26,10 +29,13 @@ public class Main {
 //
 //                break;
 //
-//            case 5:
-//
-//                break;
-//
+            case 5:
+                int[] userDataArrayInt = new int[8];
+                setValueInArray(userDataArrayInt);
+                bubbleSort(userDataArrayInt);
+                displayArray(userDataArrayInt);
+                break;
+
             case 6:
                 int[] userDataArray = new int[5];
                 setValueInArray(userDataArray);
@@ -110,7 +116,7 @@ public class Main {
 
     public static int[] setValueInArray(int userDataArray[]) {
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < userDataArray.length; i++) {
             System.out.println("Enter value:");
             userDataArray[i] = getInt();
         }
@@ -143,4 +149,24 @@ public class Main {
         return counter == firstArray.length ? true : false;
 
     }
+
+    public static void bubbleSort(int arrayDataFromUser[]) {
+        int n = arrayDataFromUser.length;
+        for (int i = 0; i < n - 1; i++)
+            for (int j = 0; j < n - i - 1; j++)
+                if (arrayDataFromUser[j] > arrayDataFromUser[j + 1]) {
+                    int temp = arrayDataFromUser[j];
+                    arrayDataFromUser[j] = arrayDataFromUser[j + 1];
+                    arrayDataFromUser[j + 1] = temp;
+                }
+    }
+
+    public static void displayArray(int sortedArray[]){
+
+        for (int i : sortedArray) {
+            System.out.println(i);
+        }
+    }
+
+
 }
