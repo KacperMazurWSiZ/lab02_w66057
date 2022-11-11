@@ -35,15 +35,26 @@ public class Main {
                 setValueInArray(userDataArray);
                 displayFactorialFromUserDataArray(userDataArray);
                 break;
-//
-//            case 7:
-//
-//                break;
+
+            case 7:
+                String[] carsArray = {"Volvo", "BMW", "Forda", "Mazda"};
+                String[] duplicateCarsArray = {"Volvo", "BMW", "Forda", "Mazda"};
+
+                    if(isEqual(carsArray, duplicateCarsArray)){
+                        System.out.println("Tablice sa takie same");
+                    }
+                    else {
+                        System.out.println("Tablice sa rozne");
+                    }
+                break;
 
         }
 
     }
-    public static int getInt(){return new Scanner(System.in).nextInt();}
+
+    public static int getInt() {
+        return new Scanner(System.in).nextInt();
+    }
 
     public static int[] getRandomNumber(int randomNumbersArray[]) {
         Random random = new Random();
@@ -67,39 +78,39 @@ public class Main {
         System.out.println("Srednia wynosi: " + avg);
     }
 
-    public static void displayValueFromArrays(){
-        int [] firstArray = {1,2,3,4,5,6,7,8,9};
-        int [] secondaryArray = {1,2,3,4,5,6,7,8,9,10};
+    public static void displayValueFromArrays() {
+        int[] firstArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] secondaryArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
         System.out.println("Nieparzysta tablica:");
 
-        for(int i = 0; i < firstArray.length; i++){
-            if(firstArray[i]%2==0){
+        for (int i = 0; i < firstArray.length; i++) {
+            if (firstArray[i] % 2 == 0) {
                 System.out.println(firstArray[i]);
             }
         }
 
         System.out.println("Parzysta tablica:");
 
-        for(int i = 0; i < secondaryArray.length; i++){
-            if(secondaryArray[i]%2==0){
+        for (int i = 0; i < secondaryArray.length; i++) {
+            if (secondaryArray[i] % 2 == 0) {
                 System.out.println(secondaryArray[i]);
             }
         }
     }
 
-    public static void changeToUppercase(){
+    public static void changeToUppercase() {
         String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
 
-        for (String c: cars ) {
+        for (String c : cars) {
             System.out.println(c.toUpperCase());
         }
 
     }
 
-    public static int [] setValueInArray(int userDataArray[]){
+    public static int[] setValueInArray(int userDataArray[]) {
 
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             System.out.println("Enter value:");
             userDataArray[i] = getInt();
         }
@@ -107,15 +118,29 @@ public class Main {
         return userDataArray;
     }
 
-    public static int getFactorial(int valueFromUserDataArray){
-         return valueFromUserDataArray > 1 ? valueFromUserDataArray * getFactorial(valueFromUserDataArray - 1) : 1;
+    public static int getFactorial(int valueFromUserDataArray) {
+        return valueFromUserDataArray > 1 ? valueFromUserDataArray * getFactorial(valueFromUserDataArray - 1) : 1;
     }
 
-    public static void displayFactorialFromUserDataArray(int userDataArray[]){
-        for(int i = 0; i < 5; i++){
+    public static void displayFactorialFromUserDataArray(int userDataArray[]) {
+        for (int i = 0; i < 5; i++) {
             System.out.println(getFactorial(userDataArray[i]));
         }
     }
 
+    public static boolean isEqual(String firstArray[], String secondArray[]) {
 
+        boolean result = false;
+        int counter = 0;
+
+        for (int i = 0; i < firstArray.length; i++){
+
+            if(firstArray[i] == secondArray[i] && firstArray.length == secondArray.length) {
+                counter++;
+            }
+        }
+
+        return counter == firstArray.length ? true : false;
+
+    }
 }
