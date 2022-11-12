@@ -189,21 +189,16 @@ public class Main {
                 wordChar = userDataArray[i].charAt(k);
                 newWord = wordChar + newWord;
             }
-
             userDataReverse[i] = newWord;
-
         }
 
         return  userDataReverse;
     }
 
     public static void displayArray(String userDataArray[]){
-
         for (String a: userDataArray
              ) {
             System.out.println(a);
         }
     }
-
-
 }
